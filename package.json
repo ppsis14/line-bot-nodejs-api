@@ -16,6 +16,7 @@
   "author": "Thikamporn Simud thikamporn.simud@gmail.com",
   "license": "ISC",
   "dependencies": {
+    "@line/bot-sdk": "^6.8.0",
     "body-parser": "^1.19.0",
     "dialogflow": "^0.10.2",
     "express": "^4.17.1"
