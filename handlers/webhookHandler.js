@@ -27,7 +27,7 @@ function handleEvent(event) {
     const echo = { type: 'text', text: event.message.text };
   
     // use reply API
-    return client.replyMessage(event.replyToken, echo + "yes");
+    return client.replyMessage(event.replyToken, echo);
 }
 
 module.exports = webhook;
