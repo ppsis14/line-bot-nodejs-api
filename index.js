@@ -14,7 +14,6 @@ const port = process.env.PORT || 4000
 const app = express();
 
 // register a webhook handler with middleware
-// about the middleware, please refer to doc
 // app.post('/webhook', line.middleware(configBot), (req, res) => res.sendStatus(200))
 app.post('/webhook', line.middleware(config), webhookHandler);
 
