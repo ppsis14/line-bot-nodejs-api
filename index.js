@@ -51,17 +51,6 @@ function handleEvent(event) {
 
 app.listen(port)
 
-// listen on port
-// const port = process.env.PORT || 3000;
-// app.listen(port, () => {
-//   console.log(`listening on ${port}`);
-// });
-
-// const express = require('express')
-// const app = express()
-// const bodyParser = require('body-parser')
-// const request = require('request')
-
 // app.use(bodyParser.urlencoded({ extended: false }))
 // app.use(bodyParser.json())
 // app.post('/webhook', (req, res) => res.sendStatus(200))
