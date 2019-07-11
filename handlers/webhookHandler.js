@@ -6,8 +6,9 @@ const client = new line.Client(config);
 
 const webhook = (req, res) => {
   console.log(`User id: ${req.body.events[0].source.userId}`);
-  res.json({ status: 'ok' });
-  return Promise
+//   res.json({ status: 'ok' });
+    res.sendStatus(200)
+    return Promise
     .all(req.body.events.map(handleEvent))
     .catch((err) => {
         console.error(err + "handlerEnvet not pass");
