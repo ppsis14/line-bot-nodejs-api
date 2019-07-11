@@ -9,10 +9,15 @@
 
 'use strict';
 
-const line = require('@line/bot-sdk');
-const express = require('express');
+const line = require('@line/bot-sdk')
+const express = require('express')
 const bodyParser = require('body-parser')
 const request = require('request')
+require('dotenv').config()
+
+// listen on port
+const port = process.env.PORT || 4000
+app.listen(port)
 
 // create LINE SDK config from env variables
 const config = {
@@ -64,8 +69,7 @@ function handleEvent(event) {
 // const bodyParser = require('body-parser')
 // const request = require('request')
 
-const port = process.env.PORT || 4000
 // app.use(bodyParser.urlencoded({ extended: false }))
 // app.use(bodyParser.json())
 // app.post('/webhook', (req, res) => res.sendStatus(200))
-app.listen(port)
+
