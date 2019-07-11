@@ -10,7 +10,7 @@ const webhook = (req, res) => {
   return Promise
     .all(req.body.events.map(handleEvent))
     .catch((err) => {
-        console.error(err);
+        console.error(err + "handlerEnvet not pass");
         res.status(5003).end();
     });
 };
