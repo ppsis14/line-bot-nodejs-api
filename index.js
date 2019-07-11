@@ -15,10 +15,6 @@ const bodyParser = require('body-parser')
 const request = require('request')
 require('dotenv').config()
 
-// listen on port
-const port = process.env.PORT || 4000
-app.listen(port)
-
 // create LINE SDK config from env variables
 const config = {
   channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN,
@@ -57,6 +53,10 @@ function handleEvent(event) {
   // use reply API
   return client.replyMessage(event.replyToken, echo);
 }
+
+// listen on port
+const port = process.env.PORT || 4000
+app.listen(port)
 
 // listen on port
 // const port = process.env.PORT || 3000;
