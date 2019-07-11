@@ -5,7 +5,7 @@ const config = require('../config.js');
 const client = new line.Client(config);
 
 const webhook = (req, res) => {
-  console.log(`User id: ${req.body.events[0].source.userId}`);
+//   console.log(`User id: ${req.body.events[0].source.userId}`);
 //   res.json({ status: 'ok' });
     res.sendStatus(200)
     return Promise
@@ -27,7 +27,7 @@ function handleEvent(event) {
     const echo = { type: 'text', text: event.message.text };
   
     // use reply API
-    return client.replyMessage(event.replyToken, echo);
+    return client.replyMessage(event.replyToken, echo + "yes");
 }
 
 module.exports = webhook;
