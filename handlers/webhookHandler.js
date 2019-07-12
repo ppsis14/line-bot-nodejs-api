@@ -5,8 +5,7 @@ const config = require('../config.js');
 const client = new line.Client(config);
 
 const webhook = (req, res) => {
-//   console.log(`User id: ${req.body.events[0].source.userId}`);
-//   res.json({ status: 'ok' });
+    // console.log(`User id: ${req.body.events[0].source.userId}`);
     res.sendStatus(200)
     return Promise
     .all(req.body.events.map(handleEvent))

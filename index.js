@@ -12,6 +12,8 @@ const port = process.env.PORT || 4000
 
 // create Express app
 const app = express();
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 
 // register a webhook handler with middleware
 // app.post('/webhook', line.middleware(configBot), (req, res) => res.sendStatus(200))
