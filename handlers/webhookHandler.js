@@ -1,15 +1,18 @@
 const line = require('@line/bot-sdk');
-const config = require('../config.js');
+// const config = require('./config.js');
 
 // create LINE SDK client
-const client = new line.Client(config);
+const client = new line.Client({
+    channelAccessToken: process.env.LINE_CHANNEL_ACCESS_TOKEN,
+    channelSecret: process.env.LINE_CHANNEL_SECRET,
+    verify: true,
+});
 
 const webhook = (req, res) => {
     // console.log(`User id: ${req.body.events[0].source.userId}`);
     res.sendStatus(200)
     return Promise
-    // .all(req.body.events.map(handleEvent))
-    .all(req.body)
+    .all(req.body.events.map(handleEvent))
     .catch((err) => {
         console.error(err + "handlerEnvet not pass");
         res.status(503).end();
@@ -24,7 +27,7 @@ function handleEvent(event) {
     }
   
     // create a echoing text message
-    const echo = { type: 'text', text: event.message.text };
+    const echo = { type: 'text', text: event.message.text + "pooh" };
   
     // use reply API
     return client.replyMessage(event.replyToken, echo);
