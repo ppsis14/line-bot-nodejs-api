@@ -8,7 +8,8 @@ const webhook = (req, res) => {
     // console.log(`User id: ${req.body.events[0].source.userId}`);
     res.sendStatus(200)
     return Promise
-    .all(req.body.events.map(handleEvent))
+    // .all(req.body.events.map(handleEvent))
+    .all(req.body)
     .catch((err) => {
         console.error(err + "handlerEnvet not pass");
         res.status(503).end();
